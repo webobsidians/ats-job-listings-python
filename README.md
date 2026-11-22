@@ -1,6 +1,6 @@
 # Scrape Job Listings from Greenhouse, Lever and Ashby Career Pages (Python and No-Code)
 
-Many company career pages run on an applicant tracking system with a public JSON feed. Here is how to read Greenhouse, Lever and Ashby jobs in Python, and a no-code option that also covers Workday and five more systems.
+Many company career pages run on an applicant tracking system with a public JSON feed. Here is how to read Greenhouse, Lever and Ashby jobs in Python, and a no-code option that also covers Workable, SmartRecruiters and Personio.
 
 > This example was written with the help of AI. The code was run and checked on 20 November 2026 before publishing.
 
@@ -17,8 +17,7 @@ That is enough for a handful of companies on these three systems. Things to know
 
 - **Full descriptions are optional.** Greenhouse returns them with `?content=true`; Lever includes `descriptionPlain`; Ashby has `descriptionPlain` and, with `?includeCompensation=true`, salary ranges when the company publishes them.
 - **Every system has its own shape.** Locations, departments, remote flags, dates and salaries live in different fields, so you will write a normalizer per system.
-- **You first have to know which ATS a company uses.** A list of company names does not tell you whether to call Greenhouse or Workday.
-- **Workday is the hard one.** Large companies often use Workday, which has no simple per-company feed: each company has its own tenant, data center number and site name, and the job list is a paged POST endpoint.
+- **You first have to know which ATS a company uses.** A list of company names does not tell you whether to call Greenhouse, Lever or Ashby.
 - **Monitoring needs state.** To get "only jobs that are new since yesterday", you have to remember what you already saw.
 
 ## Run it
